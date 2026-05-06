@@ -11,6 +11,7 @@ int main(){
     int pontosTuristicos_01;
     float densidadePop_01;
     float pibPerCapita_01;
+    unsigned long int super_poder_carta_01;
 
     //variaveis carta 02
     char estado_02;
@@ -22,6 +23,12 @@ int main(){
     int pontosTuristicos_02;
     float densidadePop_02;
     float pibPerCapita_02;
+    unsigned long int super_poder_carta_02;
+
+    //variaveis de comparação
+    unsigned long int resultado_carta_01;
+    unsigned long int resultado_carta_02;
+
 
     //Leitura carta 01
     printf("--- CARTA 01 ---\n");
@@ -77,6 +84,10 @@ int main(){
     densidadePop_02 = populacao_02 / area_02;
     pibPerCapita_02 = pib_02 / populacao_02;
 
+    //calculo super poder
+    super_poder_carta_01 = (unsigned long long ) populacao_01 + area_01 + pib_01 + pontosTuristicos_01 + pibPerCapita_01 + (1 / densidadePop_01);
+    super_poder_carta_02 = (unsigned long long ) populacao_02 + area_02 + pib_02 + pontosTuristicos_02 + pibPerCapita_02 + (1 / densidadePop_02);
+
     //Mostrando a carta 01 para o usuario.
     printf("\n--- INFORMACOES CARTA 01 ---\n");
     printf("Estado: %c\n", estado_01);
@@ -88,6 +99,7 @@ int main(){
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos_01);
     printf("Densidade Populacional: %.2f\n", densidadePop_01);
     printf("PIB per capita: %.2f", pibPerCapita_01);
+    printf("Super poder: %u\n", super_poder_carta_01);
 
     //Mostrando a carta 02 para o usuario.
     printf("\n--- INFORMACOES CARTA 02 ---\n");
@@ -100,6 +112,18 @@ int main(){
     printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos_02);
     printf("Densidade Populacional: %.2f\n", densidadePop_02);
     printf("PIB per capita: %.2f", pibPerCapita_02);
+    printf("Super poder: %u\n", super_poder_carta_02);
+
+    //comparando cartas
+    printf("\n--- COMPARANDO CARTAS !!! ---");
+    printf(" (0 = falso / 1 = verdade)\n");
+    printf("Populacao da Carta 01 é maior que populacao da Carta 02: %u\n", populacao_01 > populacao_02);
+    printf("Area da Carta 01 é maior que a area da Carta 02: %u\n", area_01 > area_02);
+    printf("PIB da Carta 01 é menor que o PIB da Carta 02: %u\n", pib_01 < pib_02);
+    printf("Numero de Pontos Turisticos da Carta 01 é igual ao numero de pontos turisticos da Carta 02: %u\n", pontosTuristicos_01 == pontosTuristicos_02);
+    printf("Densidade Populacional da Carta 01 é menor que a densidade populacional da Carta 02: %u\n", densidadePop_01 < densidadePop_02);
+    printf("PIB per capita da Carta 01 é menor que o PIB per capita da Carta 02: %u\n", pibPerCapita_01 < pibPerCapita_02);
+    printf("Super poder da Carta 1 é maior do Super poder da Carta 02: %u\n", super_poder_carta_01 > super_poder_carta_02);
 
     return 0;
 }
