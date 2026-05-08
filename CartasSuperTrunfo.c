@@ -115,7 +115,7 @@ int main(){
     printf("Super poder: %u\n", super_poder_carta_02);
 
     //comparando cartas
-    printf("\n--- COMPARANDO CARTAS !!! ---");
+    /*printf("\n--- COMPARANDO CARTAS !!! ---");
     printf(" (0 = falso / 1 = verdade)\n");
     printf("Populacao da Carta 01 é maior que populacao da Carta 02: %u\n", populacao_01 > populacao_02);
     printf("Area da Carta 01 é maior que a area da Carta 02: %u\n", area_01 > area_02);
@@ -123,7 +123,16 @@ int main(){
     printf("Numero de Pontos Turisticos da Carta 01 é igual ao numero de pontos turisticos da Carta 02: %u\n", pontosTuristicos_01 == pontosTuristicos_02);
     printf("Densidade Populacional da Carta 01 é menor que a densidade populacional da Carta 02: %u\n", densidadePop_01 < densidadePop_02);
     printf("PIB per capita da Carta 01 é menor que o PIB per capita da Carta 02: %u\n", pibPerCapita_01 < pibPerCapita_02);
-    printf("Super poder da Carta 1 é maior do Super poder da Carta 02: %u\n", super_poder_carta_01 > super_poder_carta_02);
+    printf("Super poder da Carta 1 é maior do Super poder da Carta 02: %u\n", super_poder_carta_01 > super_poder_carta_02);*/
+
+    printf("--- Comparação de cartas (Atributo: Populacao.) ---\n");
+    printf("Carta 1 - %c (%s): %d.\n", estado_01, codigoCarta_01, populacao_01);
+    printf("Carta 2 - %c (%s): %d.\n", estado_02, codigoCarta_02, populacao_02);
+    if (populacao_01 > populacao_02){
+        printf("Carta 1 - %c (%s) venceu!.\n", estado_01, codigoCarta_01);
+    } else {
+        printf("Carta 2 - %c (%s) venceu!.\n", estado_02, codigoCarta_02);
+    }
 
     return 0;
 }
